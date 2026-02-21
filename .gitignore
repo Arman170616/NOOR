@@ -28,6 +28,8 @@ flutter_app/android/local.properties
 flutter_app/android/key.properties
 flutter_app/android/app/google-services.json
 flutter_app/android/**/*.jks
+flutter_app/android/app/client_secret_*.json
+flutter_app/android/build/
 
 # iOS
 flutter_app/ios/Pods/
