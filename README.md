@@ -1,170 +1,257 @@
-# Noor (نور) — AI-Powered Quran Emotional Guidance App
+<div align="center">
 
-An Islamic mobile application that provides personalized Quranic guidance based on emotional states, powered by Claude AI.
+<img src="https://img.shields.io/badge/نور-Noor-1B5E20?style=for-the-badge&labelColor=2E7D32&color=1B5E20" height="40"/>
 
-## Features
+# Noor — نور
+### AI-Powered Quran Emotional Guidance App
 
-- **Emotional Guidance**: Share how you feel and receive relevant Quranic ayahs
-- **AI-Powered**: Claude `claude-opus-4-6` with extended thinking for deep understanding
-- **Audio Recitation**: Listen to Sheikh Al-Afasy's recitation of each ayah
-- **Save Favorites**: Bookmark ayahs that resonate with you
-- **Conversation History**: All sessions are saved and accessible
-- **Google Sign-In**: Simple and secure authentication
-![WhatsApp Image 2026-02-21 at 10 01 30 PM](https://github.com/user-attachments/assets/4c113811-e39c-4db2-b8b7-9b5f423d9993)
-![WhatsApp Image 2026-02-21 at 10 01 30 PM (3)](https://github.com/user-attachments/assets/d9708b79-dc20-4703-8172-d4e740ee4ae6)
-![WhatsApp Image 2026-02-21 at 10 01 30 PM (2)](https://github.com/user-attachments/assets/b56d7b4a-6108-4c36-93e2-67111e23ffb0)
-![WhatsApp Image 2026-02-21 at 10 01 30 PM (1)](https://github.com/user-attachments/assets/5f77a8b3-8a6e-40d4-8368-34464534daca)
+*"Let the Quran guide your heart"*
 
+[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=flat-square&logo=flutter)](https://flutter.dev)
+[![Django](https://img.shields.io/badge/Django-5.x-092E20?style=flat-square&logo=django)](https://djangoproject.com)
+[![Claude AI](https://img.shields.io/badge/Claude-claude--opus--4--6-D97757?style=flat-square&logo=anthropic)](https://anthropic.com)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
+</div>
 
-## Tech Stack
+---
+
+## 📱 Screenshots
+
+<div align="center">
+
+| Login Screen | Home Screen | Chat Screen | Ayah Detail |
+|:---:|:---:|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/4c113811-e39c-4db2-b8b7-9b5f423d9993" width="180"/> | <img src="https://github.com/user-attachments/assets/d9708b79-dc20-4703-8172-d4e740ee4ae6" width="180"/> | <img src="https://github.com/user-attachments/assets/b56d7b4a-6108-4c36-93e2-67111e23ffb0" width="180"/> | <img src="https://github.com/user-attachments/assets/5f77a8b3-8a6e-40d4-8368-34464534daca" width="180"/> |
+
+</div>
+
+---
+
+## ✨ What is Noor?
+
+**Noor (نور)** means *light* in Arabic. This app is a spiritual companion that listens to your emotional state and responds with relevant Quranic ayahs — complete with Arabic text, translation, tafsir, and beautiful audio recitation by Sheikh Al-Afasy.
+
+Whether you feel anxious, sad, grateful, or lost — Noor finds the Quran's guidance for your heart.
+
+---
+
+## 🌟 Features
+
+| Feature | Description |
+|---------|-------------|
+| 🤲 **Emotional Guidance** | Share how you feel; receive 3 personally explained Quranic ayahs |
+| 🧠 **Claude AI** | Powered by `claude-opus-4-6` with extended thinking for deep understanding |
+| 🎵 **Audio Recitation** | Sheikh Al-Afasy's recitation streamed for each ayah |
+| 🔖 **Favorites** | Save ayahs that resonate with you |
+| 💬 **Chat History** | All sessions saved and accessible anytime |
+| 🔐 **Google Sign-In** | Simple, secure authentication |
+| 📖 **Arabic Text** | Full Arabic script with Amiri font |
+
+---
+
+## 🛠 Tech Stack
+
+<div align="center">
 
 | Layer | Technology |
 |-------|-----------|
-| Backend | Django 5 + Django REST Framework |
-| Database | SQLite (development) |
-| AI | Anthropic Claude `claude-opus-4-6` |
-| Auth | Google OAuth + JWT |
-| Frontend | Flutter (Android & iOS) |
-| State | Provider |
-| HTTP | Dio with JWT interceptor |
-| Audio | just_audio |
+| **Mobile Frontend** | Flutter 3.x (Android & iOS) |
+| **State Management** | Provider |
+| **HTTP Client** | Dio with JWT interceptor |
+| **Audio** | just_audio |
+| **Backend** | Django 5 + Django REST Framework |
+| **Database** | SQLite (dev) / PostgreSQL (prod) |
+| **AI Engine** | Anthropic Claude `claude-opus-4-6` |
+| **Authentication** | Google OAuth 2.0 + JWT |
+| **Audio CDN** | Islamic Network (Sheikh Al-Afasy) |
 
-## Project Structure
+</div>
+
+---
+
+## 📁 Project Structure
 
 ```
-AL-Quran/
-├── backend/                    # Django REST API
-│   ├── quran_app/             # Project settings & URLs
-│   ├── authentication/        # Google OAuth + JWT auth
-│   ├── chat/                  # Claude AI integration
-│   ├── quran_data/            # Quran data & favorites
-│   ├── .env                   # Environment variables
+NOOR/
+├── backend/                        # Django REST API
+│   ├── authentication/             # Google OAuth + JWT
+│   ├── chat/                       # Claude AI integration & sessions
+│   ├── quran_data/                 # Ayah data & user favorites
+│   ├── quran_app/                  # Project settings & URLs
+│   ├── .env.example                # Environment template
 │   └── requirements.txt
 │
-└── flutter_app/               # Flutter mobile app
+└── flutter_app/                    # Flutter mobile app
     └── lib/
-        ├── config/            # Theme & constants
-        ├── models/            # Data models
-        ├── services/          # API, Auth, Audio services
-        ├── providers/         # State management
-        ├── screens/           # UI screens
-        └── widgets/           # Reusable widgets
+        ├── config/                 # Theme & constants
+        ├── models/                 # Data models (Ayah, User, Chat)
+        ├── services/               # API, Auth, Audio services
+        ├── providers/              # Auth & Chat state management
+        ├── screens/                # Login, Home, Chat, Ayah Detail
+        └── widgets/                # MessageBubble, AyahCard, AudioPlayer
 ```
 
-## Quick Start
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
 - Python 3.10+
-- Flutter 3.x
+- Flutter 3.x SDK
 - Android Studio / Xcode
-- Anthropic API key
-- Google Cloud project with OAuth configured
+- [Anthropic API key](https://console.anthropic.com)
+- Google Cloud project with OAuth 2.0 configured
 
-### 1. Clone & Configure
+### 1. Clone the repository
 
 ```bash
-cd AL-Quran
+git clone https://github.com/Arman170616/NOOR.git
+cd NOOR
 ```
 
-Create `backend/.env`:
+### 2. Configure environment
+
+Copy the template and fill in your values:
+
+```bash
+cp backend/.env.example backend/.env
+```
+
 ```env
-SECRET_KEY=your-django-secret-key-here
+SECRET_KEY=your-django-secret-key
 DEBUG=True
 ANTHROPIC_API_KEY=sk-ant-api03-...
 GOOGLE_WEB_CLIENT_ID=your-web-client-id.apps.googleusercontent.com
-GOOGLE_ANDROID_CLIENT_ID=140560791771-iojtfce8196hq7duhr7avos5gjpt6idb.apps.googleusercontent.com
+GOOGLE_ANDROID_CLIENT_ID=your-android-client-id.apps.googleusercontent.com
 ```
 
-### 2. Run Setup Script
-
-```bash
-chmod +x setup.sh
-./setup.sh
-```
-
-### 3. Start the Backend
+### 3. Run the backend
 
 ```bash
 cd backend
-source venv/bin/activate
-python manage.py runserver 0.0.0.0:8000
+python -m venv venv
+source venv/bin/activate          # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver 0.0.0.0:8001
 ```
 
 ### 4. Configure Flutter
 
-Update `flutter_app/lib/config/constants.dart` with your machine's IP:
+Update `flutter_app/lib/config/constants.dart`:
+
 ```dart
-static const String baseUrl = 'http://YOUR_IP:8000/api';
+// For physical device — use your machine's local IP
+static const String baseUrl = 'http://YOUR_LOCAL_IP:8001/api';
+
+// Or use a tunnel for any network
+static const String baseUrl = 'https://your-tunnel-url.serveousercontent.com/api';
 ```
 
-### 5. Run the Flutter App
+### 5. Run the Flutter app
 
 ```bash
 cd flutter_app
+flutter pub get
 flutter run
 ```
 
-## API Endpoints
+---
+
+## 🔌 API Reference
 
 ### Authentication
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/auth/google/` | Google Sign-In |
-| POST | `/api/auth/refresh/` | Refresh JWT token |
-| POST | `/api/auth/logout/` | Logout |
-| GET | `/api/auth/profile/` | Get user profile |
+| `POST` | `/api/auth/google/` | Sign in with Google ID token |
+| `POST` | `/api/auth/refresh/` | Refresh JWT access token |
+| `POST` | `/api/auth/logout/` | Logout & invalidate token |
+| `GET` | `/api/auth/profile/` | Get current user profile |
 
 ### Chat
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/chat/sessions/` | List sessions |
-| POST | `/api/chat/sessions/` | Create session |
-| GET | `/api/chat/sessions/<id>/` | Get session messages |
-| POST | `/api/chat/message/` | Send message |
+| `GET` | `/api/chat/sessions/` | List all chat sessions |
+| `POST` | `/api/chat/sessions/` | Create new session |
+| `GET` | `/api/chat/sessions/<id>/` | Get session messages |
+| `POST` | `/api/chat/message/` | Send message, get AI response |
 
 ### Quran Data
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/quran/favorites/` | List favorites |
-| POST | `/api/quran/favorites/add/` | Add favorite |
-| DELETE | `/api/quran/favorites/<id>/` | Remove favorite |
-| GET | `/api/quran/ayah/<surah>/<ayah>/` | Get ayah details |
+| `GET` | `/api/quran/favorites/` | List saved favorites |
+| `POST` | `/api/quran/favorites/add/` | Save an ayah |
+| `DELETE` | `/api/quran/favorites/<id>/` | Remove a favorite |
+| `GET` | `/api/quran/ayah/<surah>/<ayah>/` | Get ayah details |
 
-## Google OAuth Setup
+---
+
+## 🔑 Google OAuth Setup
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com)
-2. Create OAuth 2.0 credentials:
-   - **Web client** (for backend verification)
-   - **Android client** with SHA-1 fingerprint
-3. For Android SHA-1:
+2. Create **OAuth 2.0 credentials**:
+   - **Web application** client → use as `GOOGLE_WEB_CLIENT_ID`
+   - **Android** client → add your package name + SHA-1 fingerprint
+3. Get your debug SHA-1:
    ```bash
-   keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+   keytool -list -v -keystore ~/.android/debug.keystore \
+     -alias androiddebugkey -storepass android -keypass android
    ```
-4. Add `google-services.json` to `flutter_app/android/app/`
 
-## Environment Variables
+---
 
-| Variable | Description |
-|----------|-------------|
-| `SECRET_KEY` | Django secret key |
-| `DEBUG` | Debug mode (`True`/`False`) |
-| `ANTHROPIC_API_KEY` | Claude AI API key |
-| `GOOGLE_WEB_CLIENT_ID` | Google OAuth web client ID |
-| `GOOGLE_ANDROID_CLIENT_ID` | Google OAuth Android client ID |
+## ⚙️ Environment Variables
 
-## How It Works
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `SECRET_KEY` | ✅ | Django secret key |
+| `DEBUG` | ✅ | `True` for development |
+| `ANTHROPIC_API_KEY` | ✅ | Claude AI API key |
+| `GOOGLE_WEB_CLIENT_ID` | ✅ | Google OAuth web client |
+| `GOOGLE_ANDROID_CLIENT_ID` | ✅ | Google OAuth Android client |
+| `ALLOWED_HOSTS` | ✅ | Comma-separated allowed hosts |
+| `CORS_ALLOWED_ORIGINS` | ⬜ | CORS origins for web clients |
 
-1. User types their emotional state (e.g., "I feel anxious about my future")
-2. Claude analyzes the emotion with extended thinking
-3. Claude selects 3 relevant Quranic ayahs with Arabic text, translation, and personal explanation
-4. Audio recitation is loaded from Islamic Network CDN
-5. User can save favorite ayahs and replay conversations
+---
 
-## Development Notes
+## 💡 How It Works
 
-- All Flutter IDE errors ("Target of URI doesn't exist") resolve after `flutter pub get`
-- The backend uses SQLite by default — switch to PostgreSQL for production
-- Claude uses `thinking: {type: "adaptive"}` for nuanced emotional understanding
-- JWT access tokens expire in 60 minutes; refresh tokens last 7 days
+```
+User types: "I feel anxious about my future"
+        │
+        ▼
+Claude claude-opus-4-6 analyzes emotion with extended thinking
+        │
+        ▼
+Selects 3 Quranic ayahs most relevant to the emotional state
+        │
+        ▼
+Returns: Arabic text + Translation + Personal tafsir explanation
+        │
+        ▼
+Audio streamed from Islamic Network CDN (Sheikh Al-Afasy)
+```
+
+---
+
+## 🌙 Islamic Design Philosophy
+
+Noor is designed with respect for Islamic values:
+- No music, only Quranic recitation
+- Amiri Arabic font for proper Quranic text rendering
+- Green color scheme inspired by Islamic tradition
+- Bismillah displayed on the welcome screen
+- All ayahs sourced from verified Quranic data
+
+---
+
+<div align="center">
+
+Made with ❤️ for the Ummah
+
+*"Indeed, with hardship will be ease."* — Quran 94:5
+
+</div>
