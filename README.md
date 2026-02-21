@@ -10,6 +10,12 @@ An Islamic mobile application that provides personalized Quranic guidance based 
 - **Save Favorites**: Bookmark ayahs that resonate with you
 - **Conversation History**: All sessions are saved and accessible
 - **Google Sign-In**: Simple and secure authentication
+![WhatsApp Image 2026-02-21 at 10 01 30 PM](https://github.com/user-attachments/assets/4c113811-e39c-4db2-b8b7-9b5f423d9993)
+![WhatsApp Image 2026-02-21 at 10 01 30 PM (3)](https://github.com/user-attachments/assets/d9708b79-dc20-4703-8172-d4e740ee4ae6)
+![WhatsApp Image 2026-02-21 at 10 01 30 PM (2)](https://github.com/user-attachments/assets/b56d7b4a-6108-4c36-93e2-67111e23ffb0)
+![WhatsApp Image 2026-02-21 at 10 01 30 PM (1)](https://github.com/user-attachments/assets/5f77a8b3-8a6e-40d4-8368-34464534daca)
+
+
 
 ## Tech Stack
 
