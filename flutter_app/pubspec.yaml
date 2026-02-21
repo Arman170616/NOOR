@@ -1,0 +1,58 @@
+name: noor_quran
+description: AI-Powered Quran Emotional Guidance App - Noor (نور)
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Google Sign-In
+  google_sign_in: ^6.2.1
+
+  # State Management
+  provider: ^6.1.2
+
+  # HTTP Client
+  dio: ^5.6.0
+
+  # Audio Player
+  just_audio: ^0.9.40
+
+  # Local Storage
+  shared_preferences: ^2.3.2
+
+  # UI Enhancements
+  flutter_animate: ^4.5.0
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
+  lottie: ^3.1.2
+
+  # Utilities
+  intl: ^0.19.0
+  uuid: ^4.4.0
+  url_launcher: ^6.3.0
+
+  # Icons
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/lottie/
+  fonts:
+    - family: Amiri
+      fonts:
+        - asset: assets/fonts/Amiri-Regular.ttf
+        - asset: assets/fonts/Amiri-Bold.ttf
+          weight: 700
